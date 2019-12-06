@@ -5,3 +5,11 @@ services:
     tty: true
     volumes:
       - ./workspace:/workspace:cached
+      - ./api:/api:cached
+    ports:
+      - ${CONVERT_API_PORT}:8000
+    environment:
+      TZ: "Asia/Tokyo"
+      FLASK_APP: run.py
+      FLASK_CONFIG: development # development or test or production
+      PYTHONPATH: /app/conf:/app/src

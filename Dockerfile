@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM python:3.7.5-alpine3.10
 
 RUN apk add --update --no-cache libreoffice \
     libreoffice-lang-ja \
@@ -15,3 +15,9 @@ COPY ./fonts/ipaexm.ttf /usr/share/fonts/ipa-ex-mincho/
 
 RUN chmod 0644 /usr/share/fonts/ipa-ex-mincho/ipaexm.ttf \
     && fc-cache -fv
+
+WORKDIR /api
+
+COPY ./api /api
+
+RUN pip install -r requirements.txt
