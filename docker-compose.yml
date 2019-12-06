@@ -1,0 +1,7 @@
+version: "3"
+services:
+  libreoffice:
+    build: .
+    tty: true
+    volumes:
+      - ./workspace:/workspace:cached
