@@ -12,7 +12,7 @@ def error_handler_500(error):
     サーバーサイドの不明なエラーハンドリング
     '''
     response = {
-        'message': 'サーバー側で予期せぬエラーが発生しました。',
+        'message': 'エラーが発生しました。',
         'description': error.description,
         'code': error.code
     }
