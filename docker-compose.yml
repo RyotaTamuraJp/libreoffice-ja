@@ -13,4 +13,5 @@ services:
       FLASK_APP: run.py
       FLASK_CONFIG: development # development or test or production
       PYTHONPATH: /api/conf:/api/src
-    command: "python run.py"
+    # command: "python run.py"
+    command: "uwsgi uwsgi.ini"

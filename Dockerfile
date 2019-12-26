@@ -1,6 +1,10 @@
 FROM python:3.7.5-alpine3.10
 
 RUN apk add --update --no-cache libreoffice \
+    python3-dev \
+    build-base \
+    linux-headers \
+    pcre-dev \
     libreoffice-lang-ja \
     fontconfig \
     msttcorefonts-installer \
