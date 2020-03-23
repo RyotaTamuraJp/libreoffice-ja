@@ -3,16 +3,16 @@ from dataclasses import dataclass
 
 
 def get_flask_env_conf():
-    env = os.getenv(key='FLASK_CONFIG', default='production')
-    prefix = 'conf.flask_conf.'
+    env = os.getenv(key="FLASK_CONFIG", default="production")
+    prefix = "conf.flask_conf."
     class_name = None
 
-    if env == 'production':
-        class_name = 'ProductionConfig'
-    elif env == 'development':
-        class_name = 'DevelopmentConfig'
-    elif env == 'test':
-        class_name = 'TestingConfig'
+    if env == "production":
+        class_name = "ProductionConfig"
+    elif env == "development":
+        class_name = "DevelopmentConfig"
+    elif env == "test":
+        class_name = "TestingConfig"
 
     return prefix + class_name
 
@@ -20,7 +20,7 @@ def get_flask_env_conf():
 @dataclass(frozen=True)
 class BaseConfig(object):
     JSON_AS_ASCII = False
-    MAX_CONTENT_LENGTH = 100 * (1024 ** 1)
+    MAX_CONTENT_LENGTH = 10 * (1024 ** 2)
 
 
 @dataclass(frozen=True)
